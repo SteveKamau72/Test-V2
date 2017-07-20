@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnGithub;
     TimeTask timeTask;
     List<RepoModel> repoModelList = new ArrayList<>();
+    FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +46,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //i have used a view injector
         ButterKnife.bind(this);
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         timeTask = new TimeTask(getApplicationContext());
     }
 
     @OnClick(R.id.github)
     void displayTrendingRepos() {
         fetchCurrentTrendingRepos();
+        //firebase analytics for button click event
+        Bundle params = new Bundle();
+        params.putString("github_button", "clicked");
+        mFirebaseAnalytics.logEvent("on_click", params);
     }
 
     private void fetchCurrentTrendingRepos() {
