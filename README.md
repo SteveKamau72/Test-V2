@@ -18,3 +18,5 @@ order = descending
 2. Implemented [loopj Asynchronous Http Client](http://loopj.com/android-async-http/), an asynchronous callback-based Http client for Android built on top of Apache’s HttpClient libraries. 
 
 3. Used [ButterKnife](http://jakewharton.github.io/butterknife/). A field and method binding for Android views which uses annotation processing to generate boilerplate code for you.
+
+4. For analytics and crash reporting i used [Firebase Analytics](https://firebase.google.com/docs/analytics/android/start/) and [Firebase Crash Reporting](https://firebase.google.com/docs/crash/)
