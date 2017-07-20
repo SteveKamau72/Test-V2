@@ -39,6 +39,16 @@
         android:text="2017-12-13"
         android:textSize="12sp" />
 
+    <ImageView
+        android:id="@+id/updated_at_icon"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_below="@+id/full_name"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/updated_at"
+        android:layout_toRightOf="@+id/updated_at"
+        android:src="@drawable/ic_time_ago" />
+
     <TextView
         android:id="@+id/description"
         android:layout_width="wrap_content"

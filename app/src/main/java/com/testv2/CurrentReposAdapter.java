@@ -61,7 +61,7 @@ public class CurrentReposAdapter extends RecyclerView.Adapter<CurrentReposAdapte
         // include binding logic here
         RepoModel repoModel = mData.get(position);
         holder.tvFullName.setText(repoModel.getFullName());
-        holder.tvUpdatedAt.setText(repoModel.getUpdatedAt());
+        holder.tvUpdatedAt.setText(repoModel.getUpdatedAt()+" ·");
         holder.tvStargazersCount.setText(repoModel.getStargazersCount());
         holder.tvDescription.setText(repoModel.getDescription());
         holder.tvLanguage.setText(repoModel.getLanguage());
